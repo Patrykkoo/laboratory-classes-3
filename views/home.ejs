@@ -1,10 +1,13 @@
-<html>
+<!DOCTYPE html>
+<html lang="pl_PL">
   <head>
     <title><%= headTitle %></title>
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
-    <%- include("partials/navigation", { menuLinks, activeLinkPath }) %>
+    <nav>
+      <%= include('partials/navigation', { menuLinks: menuLinks, activeLinkPath: path }) %>
+    </nav>
     <main>
       <h1>Home</h1>
     </main>

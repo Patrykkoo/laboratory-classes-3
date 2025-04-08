@@ -1,10 +1,26 @@
-<!-- 🏗 Structo the Builder -->
-<!-- Wykorzystaj odpowiednią składnię EJS do odpowiednich zadań. -->
-<!-- Podpowiedź: <% if (products?.length > 0) { %> -->
-<!-- Podpowiedź: ... -->
-<!-- Podpowiedź: <% } %> -->
-
-<!-- Wykorzystaj odpowiednią składnię EJS do iteracyjnego zwracania elementów HTML. -->
-<!-- Podpowiedź: <% products.forEach(product => { %> -->
-<!-- Podpowiedź: ... -->
-<!-- Podpowiedź: <% }); %> -->
+<!DOCTYPE html>
+<html lang="pl_PL">
+  <head>
+    <title><%= headTitle %></title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <nav>
+      <%= include('partials/navigation', { menuLinks: menuLinks, activeLinkPath: path }) %>
+    </nav>
+    <main>
+      <h1>Products</h1>
+      <% if (products && products.length > 0) { %>
+        <ul>
+          <% products.forEach(product => { %>
+            <li>
+              <strong><%= product.name %></strong>: <%= product.description %>
+            </li>
+          <% }) %>
+        </ul>
+      <% } else { %>
+        <p>No products available.</p>
+      <% } %>
+    </main>
+  </body>
+</html>

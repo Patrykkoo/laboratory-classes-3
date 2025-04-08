@@ -1,19 +1,18 @@
-<html>
+<!DOCTYPE html>
+<html lang="pl_PL">
   <head>
     <title><%= headTitle %></title>
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
-    <%- include("partials/navigation", { menuLinks, activeLinkPath }) %>
+    <nav>
+      <%= include('partials/navigation', { menuLinks: menuLinks, activeLinkPath: path }) %>
+    </nav>
     <main>
-      <h1>Newest product</h1>
-      <% if (newestProduct?.name && newestProduct?.description) { %>
-        <br />
-        <div>
-          New product data - Name: <%= newestProduct.name %>, Description: <%= newestProduct.description %>
-        </div>
+      <h1>Newest Product</h1>
+      <% if (newestProduct) { %>
+        <div>New product data: <%= newestProduct %></div>
       <% } else { %>
-        <br />
         <div>No new products available.</div>
       <% } %>
     </main>

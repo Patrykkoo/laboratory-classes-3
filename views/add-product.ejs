@@ -1,26 +1,24 @@
-<html>
+<!DOCTYPE html>
+<html lang="pl_PL">
   <head>
     <title><%= headTitle %></title>
     <link rel="stylesheet" href="/css/main.css" />
   </head>
   <body>
-    <%- include("partials/navigation", { menuLinks, activeLinkPath }) %>
+    <nav>
+      <%= include('partials/navigation', { menuLinks: menuLinks, activeLinkPath: path }) %>
+    </nav>
     <main>
       <h1>Add product</h1>
       <form action="/products/add" method="POST">
-        <br />
         <label>
-          Name
-          <br />
+          Name:
           <input type="text" name="name" />
         </label>
-        <br />
         <label>
-          Description
-          <br />
+          Description:
           <input type="text" name="description" />
         </label>
-        <br />
         <button type="submit">Add</button>
       </form>
     </main>
