@@ -9,7 +9,7 @@
       <%= include('partials/navigation', { menuLinks: menuLinks, activeLinkPath: path }) %>
     </nav>
     <main>
-      <h1>Products</h1>
+      <h1 class="heading">Products</h1>
       <% if (products && products.length > 0) { %>
         <ul>
           <% products.forEach(product => { %>
