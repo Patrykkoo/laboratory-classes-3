@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <title><%= headTitle %></title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body>
+    <%- include("partials/navigation", { menuLinks, activeLinkPath }) %>
+    <main>
+      <h1>Newest product</h1>
+      <% if (newestProduct?.name && newestProduct?.description) { %>
+        <br />
+        <div>
+          New product data - Name: <%= newestProduct.name %>, Description: <%= newestProduct.description %>
+        </div>
+      <% } else { %>
+        <br />
+        <div>No new products available.</div>
+      <% } %>
+    </main>
+  </body>
+</html>
